@@ -163,8 +163,8 @@ class Robokassa
         }
 
         if (!empty($params['Receipt'])) {
-            $params['Receipt'] = urlencode(json_encode($params['Receipt']));
-            $signatureParams['Receipt'] = $params['Receipt'];
+            $signatureParams['Receipt'] = urlencode($params['Receipt']);
+            $params['Receipt'] = urlencode($signatureParams['Receipt']);
         }
 
         if (!empty($params['IsTest']) && $params['IsTest']) {
